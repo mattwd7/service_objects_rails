@@ -1,0 +1,12 @@
+require "rails_helper"
+
+RSpec.describe Services::<%= @service_name %> do
+  subject(:service_response) do
+    described_class.call<%= "(\n      #{@service_args.map { |arg| "#{arg}: #{arg}" }.join(",\n      ")}\n    )" if @service_args.any? %>
+  end
+
+  <%= @service_args.map { |arg| "let(:#{arg}) { nil }" }.join("\n  ") %>
+
+  it "does what it should"
+  it "returns what it ought to"
+end

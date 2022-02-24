@@ -1,0 +1,13 @@
+module Services
+  class <%= @service_name %>
+    def initialize(<%= @service_args.map { |arg| "#{arg}:" }.join(", ") %>)
+    end
+
+    def call
+    end
+
+    private
+
+    attr_reader <%= @service_args.map { |arg| ":#{arg}" }.join(", ") %>
+  end
+end
