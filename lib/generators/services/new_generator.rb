@@ -1,6 +1,6 @@
 require "rails/generators"
 
-module ServiceObjectsRails
+module Services
   module Generators
     class NewGenerator < Rails::Generators::Base
       source_root File.expand_path("../templates", __dir__)

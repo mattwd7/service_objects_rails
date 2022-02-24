@@ -1,7 +1,7 @@
 require "spec_helper"
-require "generators/service_objects_rails/new_generator"
+require "generators/services/new_generator"
 
-describe ServiceObjectsRails::Generators::NewGenerator do
+describe Services::Generators::NewGenerator do
   let(:service_name) { "MyNewService" }
   let(:service_path) { "#{Rails.root}/app/services/my_new_service.rb" }
   let(:service_spec_path) { "#{Rails.root}/spec/services/my_new_service_spec.rb" }

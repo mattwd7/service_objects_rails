@@ -1,4 +1,4 @@
-# ServiceObjectsRails
+# Service Objects for Rails
 
 A lightweight, high-speed service layer for Rails applications.
 
@@ -8,7 +8,7 @@ Gone are the days of fat controllers or fat models. Service objects (also known 
 ```
 module Services
   class AddPlayerToTable
-    include ServiceObject::Base
+    include Services::Base
 
     def initialize(user_id:, table_id:)
       @user = User.find(user_id)
@@ -43,7 +43,7 @@ end
 ## Installation
 Include the gem in your Gemfile:
 ```
-gem "service_objects_rails"
+gem "services"
 ```
 
 and install:
@@ -68,7 +68,7 @@ rails g services:new AddPlayerToTable user_id table_id
 
 module Services
   class AddPlayerToTable
-    include ServiceObject::Base
+    include Services::Base
 
     def initialize(user_id:, table_id:)
       @user = User.find(user_id)
@@ -114,7 +114,7 @@ end
 ```
 
 ## Usage
-All service objects have the same skeleton: an `initialize` method, a `call` method, and an included `ServiceObjects::Base` mixin. The `ServiceObjects::Base` mixin enforces strict, predictable usage of service objects such that they
+All service objects have the same skeleton: an `initialize` method, a `call` method, and an included `Services::Base` mixin. The `Services::Base` mixin enforces strict, predictable usage of service objects such that they
 
 1. Are always called with named arguemnts
 1. Can never be publicly instantiated; only `call`ed

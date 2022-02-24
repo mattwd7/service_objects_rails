@@ -1,4 +1,4 @@
-module ServiceObjectsRails
+module Services
   class << self
     attr_writer :return_service_response_object
 
