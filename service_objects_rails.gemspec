@@ -17,13 +17,17 @@ Gem::Specification.new do |gem|
 
   gem.files = all_files - test_files
 
-  gem.add_development_dependency "rspec"
-  gem.add_development_dependency "pry"
+  gem.add_development_dependency "codecov"
+  gem.add_development_dependency "dotenv"
   gem.add_development_dependency "factory_bot_rails"
-
-  gem.add_development_dependency "rubocop"
+  gem.add_development_dependency "pry"
+  gem.add_development_dependency "rake"
+  gem.add_development_dependency "rspec-rails"
+  gem.add_development_dependency "rspec"
   gem.add_development_dependency "rubocop-performance"
   gem.add_development_dependency "rubocop-rails"
   gem.add_development_dependency "rubocop-rspec"
+  gem.add_development_dependency "rubocop"
+  gem.add_development_dependency "simplecov"
   gem.add_development_dependency "standard"
 end
