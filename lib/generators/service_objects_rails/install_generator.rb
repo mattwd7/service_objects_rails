@@ -9,8 +9,15 @@ module ServiceObjectsRails
         "generates a config files, and generates the ServiceBase module."
 
       def copy_config
-        template "service_objects_rails_config.rb", "#{Rails.root}/config/service_objects_rails.rb"
-        # template "service_base.rb", "#{Rails.root}/app/services/service_base.rb"
+        template(
+          "service_objects_rails_config.rb",
+          "#{Rails.root}/config/service_objects_rails.rb"
+        )
+      end
+
+      def setup_file_structure
+        empty_directory("#{Rails.root}/app/services")
+        empty_directory("#{Rails.root}/spec/services")
       end
     end
   end

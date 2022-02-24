@@ -1,9 +1,8 @@
 module FileManager
-  def config_file
-    "#{Rails.root}/config/service_objects_rails.rb"
-  end
-
-  def remove_config
-    FileUtils.remove_file(config_file) if File.file?(config_file)
+  def remove_files_and_directories(file_and_directories)
+    file_and_directories.each do |file_or_directory|
+      FileUtils.remove_file(file_or_directory) if File.file?(file_or_directory)
+      FileUtils.rmdir(file_or_directory) if File.directory?(file_or_directory)
+    end
   end
 end
