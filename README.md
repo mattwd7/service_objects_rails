@@ -3,7 +3,7 @@
 A lightweight, high-speed service layer for Rails applications.
 
 ## Motivation
-Gone are the days of fat controllers or fat models. Service objects (also known as Commands) enable an important service layer in your Rails applications to keep your code readable, reusable and testable. This is a widespread and accepted practice in the Ruby on Rails community and this gem hopes to streamline the use of this pattern. Here is an example of a service object that adds a new user to a table in a poker application:
+Gone are the days of fat controllers and fat models! Service objects (sometimes known as Commands) enable an important service layer in your Rails applications to keep your code readable, reusable, and testable. Service objects help to facilitate a separation of concerns and the single responsibility principle. Here is an example of a service object that adds a new user to a table in a poker application:
 
 ```
 module Services
@@ -39,6 +39,7 @@ module Services
   end
 end
 ```
+Without this Service Object, our Rails models like User, Table, and Queue would require a knowledge of associated models and their logic, consequently bloating model classes and their tests. Instead, this Service Object orchestrates the necessary objects to perform the singular task of adding a player to a poker table.
 
 ## Installation
 Include the gem in your Gemfile:
