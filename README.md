@@ -44,7 +44,7 @@ Without this Service Object, our Rails models like User, Table, and Queue would 
 ## Installation
 Include the gem in your Gemfile:
 ```
-gem "services"
+gem "service_objects_rails"
 ```
 
 and install:
@@ -57,7 +57,7 @@ Then generate boilerplate directories and gem configuration files with
 rails generate services:install
 ```
 
-This will create the `app/services` directory which will hold the namespaced service objects you create and use in your application.
+This will create the `app/namespaces/services` directory which will hold the namespaced service objects you create and use in your application.
 
 ## Quick start
 ```
@@ -103,13 +103,18 @@ end
 ## use the service
 
 # app/controllers/tables_controller.rb
-def join_table
-  service_response = AddPlayerToTable.call(user_id: uid, table_id: tid)
+class TablesController < ApplicationController
+  def join_table
+    service_response = Services::AddPlayerToTable.call(
+      user_id: params[:user_id],
+      table_id: params[:table_id]
+    )
 
-  if service_response.success?
-    render :show, status: 204
-  else
-    render json: { errors: service_response.errors.full_messages }
+    if service_response.success?
+      render :show, status: 204
+    else
+      render json: { errors: service_response.errors.full_messages }
+    end
   end
 end
 ```
@@ -133,7 +138,7 @@ An example of using the generator:
 ```
 rails g services:new AddPlayerToTable user_id table_id
 
-# app/services/add_player_to_table.rb
+# app/namespaces/services/add_player_to_table.rb
 module Services
   class AddPlayerToTable
     include ServiceObject::Base
@@ -153,7 +158,7 @@ module Services
 end
 
 
-# spec/services/add_player_to_table_spec.rb
+# spec/namespaces/services/add_player_to_table_spec.rb
 include "rails_helper"
 
 RSpec.describe Services::AddPlayerToTable do
