@@ -3,13 +3,13 @@ require "generators/services/new_generator"
 
 describe Services::Generators::NewGenerator do
   let(:service_name) { "MyNewService" }
-  let(:service_path) { "#{Rails.root}/app/services/my_new_service.rb" }
-  let(:service_spec_path) { "#{Rails.root}/spec/services/my_new_service_spec.rb" }
+  let(:service_path) { "#{Rails.root}/app/namespaces/services/my_new_service.rb" }
+  let(:service_spec_path) { "#{Rails.root}/spec/namespaces/services/my_new_service_spec.rb" }
 
   before { remove_files_and_directories }
   after { remove_files_and_directories }
 
-  it "creates a new service object in the app/services directory" do
+  it "creates a new service object in the app/namespaces/services directory" do
     described_class.start([service_name])
 
     file_contents = File.read(service_path)
@@ -17,7 +17,7 @@ describe Services::Generators::NewGenerator do
     expect(file_contents).to include("include Services::Base")
   end
 
-  it "creates a new service object in the app/services directory" do
+  it "creates a new service object in the app/namespaces/services directory" do
     described_class.start([service_name])
 
     file_contents = File.read(service_spec_path)
@@ -67,7 +67,7 @@ describe Services::Generators::NewGenerator do
 
   context "with namespacing" do
     let(:service_name) { "Users::MyNewService" }
-    let(:service_path) { "#{Rails.root}/app/services/users/my_new_service.rb" }
+    let(:service_path) { "#{Rails.root}/app/namespaces/services/users/my_new_service.rb" }
 
     it "creates a new service object within an appropriate file structure" do
       described_class.start([service_name])

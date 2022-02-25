@@ -16,8 +16,8 @@ module Services
       end
 
       def setup_file_structure
-        empty_directory("#{Rails.root}/app/services")
-        empty_directory("#{Rails.root}/spec/services")
+        empty_directory("#{Rails.root}/app/namespaces/services")
+        empty_directory("#{Rails.root}/spec/namespaces/services")
       end
     end
   end

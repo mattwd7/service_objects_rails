@@ -12,11 +12,11 @@ describe Services::Generators::InstallGenerator do
 
   it "creates an app/services directory" do
     described_class.start
-    expect(File.directory?("#{Rails.root}/app/services")).to eq(true)
+    expect(File.directory?("#{Rails.root}/app/namespaces/services")).to eq(true)
   end
 
   it "creates a spec/services directory" do
     described_class.start
-    expect(File.directory?("#{Rails.root}/spec/services")).to eq(true)
+    expect(File.directory?("#{Rails.root}/spec/namespaces/services")).to eq(true)
   end
 end

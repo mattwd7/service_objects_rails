@@ -13,14 +13,14 @@ module Services
       def create_new_service
         template(
           "new_service.erb",
-          "#{Rails.root}/app/services/#{service_filepath}.rb"
+          "#{Rails.root}/app/namespaces/services/#{service_filepath}.rb"
         )
       end
 
       def create_new_service_spec
         template(
           "new_service_spec.erb",
-          "#{Rails.root}/spec/services/#{service_filepath}_spec.rb"
+          "#{Rails.root}/spec/namespaces/services/#{service_filepath}_spec.rb"
         )
       end
 
