@@ -8,5 +8,6 @@ RSpec.describe Services::<%= @service_name %> do
   <%= @service_args.map { |arg| "let(:#{arg}) { nil }" }.join("\n  ") %>
 
   it "does what it should"
+
   it "returns what it ought to"
 end

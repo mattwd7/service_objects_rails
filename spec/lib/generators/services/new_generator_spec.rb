@@ -38,6 +38,8 @@ describe Services::Generators::NewGenerator do
 
       file_contents = File.read(service_path)
       expect(file_contents).to include("def initialize(user_id:, friend_id:)")
+      expect(file_contents).to include("@user_id = user_id")
+      expect(file_contents).to include("@friend_id = friend_id")
     end
 
     it "makes service arguments privately readable" do

@@ -3,6 +3,7 @@ module Services
     include Services::Base
 
     def initialize(<%= @service_args.map { |arg| "#{arg}:" }.join(", ") %>)
+      <%= @service_args.map { |arg| "@#{arg} = #{arg}" }.join("\n      ") %>
     end
 
     def call
