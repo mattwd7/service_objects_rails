@@ -1,4 +1,7 @@
-module Services
+require "services/base"
+require "services/version"
+
+module ServiceObjectsRails
   class << self
     attr_writer :return_service_response_object
 

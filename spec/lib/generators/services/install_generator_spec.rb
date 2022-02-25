@@ -2,12 +2,12 @@ require "spec_helper"
 require "generators/services/install_generator"
 
 describe Services::Generators::InstallGenerator do
-  before { remove_files_and_directories("#{Rails.root}/config/services.rb") }
-  after { remove_files_and_directories("#{Rails.root}/config/services.rb") }
+  before { remove_files_and_directories("#{Rails.root}/config/service_objects_rails.rb") }
+  after { remove_files_and_directories("#{Rails.root}/config/service_objects_rails.rb") }
 
   it "installs config file properly" do
     described_class.start
-    expect(File.file?("#{Rails.root}/config/services.rb")).to eq(true)
+    expect(File.file?("#{Rails.root}/config/service_objects_rails.rb")).to eq(true)
   end
 
   it "creates an app/services directory" do

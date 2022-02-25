@@ -1,6 +1,6 @@
-require "services"
+require "service_objects_rails"
 
-Services.config do |c|
+ServiceObjectsRails.config do |c|
   # The Services::Response class is always returned after
   # executing the #call on a Service. This object includes
   # goodies like graceful error handling and returning with the

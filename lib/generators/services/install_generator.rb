@@ -10,8 +10,8 @@ module Services
 
       def copy_config
         template(
-          "services_config.rb",
-          "#{Rails.root}/config/services.rb"
+          "service_objects_rails_config.rb",
+          "#{Rails.root}/config/service_objects_rails.rb"
         )
       end
 
