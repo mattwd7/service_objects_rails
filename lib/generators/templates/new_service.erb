@@ -1,5 +1,7 @@
 module Services
   class <%= @service_name %>
+    include Services::Base
+
     def initialize(<%= @service_args.map { |arg| "#{arg}:" }.join(", ") %>)
     end
 

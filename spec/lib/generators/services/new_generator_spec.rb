@@ -14,6 +14,7 @@ describe Services::Generators::NewGenerator do
 
     file_contents = File.read(service_path)
     expect(file_contents).to include("class MyNewService")
+    expect(file_contents).to include("include Services::Base")
   end
 
   it "creates a new service object in the app/services directory" do

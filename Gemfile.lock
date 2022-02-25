@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    services (0.1.0)
+    service_objects_rails (0.1.0)
 
 GEM
   remote: http://rubygems.org/
@@ -238,7 +238,7 @@ DEPENDENCIES
   rubocop-performance
   rubocop-rails
   rubocop-rspec
-  services!
+  service_objects_rails!
   simplecov
   standard
   tzinfo-data
