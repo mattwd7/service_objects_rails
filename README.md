@@ -1,5 +1,8 @@
 # Service Objects for Rails
 
+[![mattwd7](https://circleci.com/gh/mattwd7/service_objects_rails.svg?style=svg)](https://app.circleci.com/pipelines/github/mattwd7/service_objects_rails?filter=all)
+[![Test Coverage](https://codecov.io/gh/mattwd7/service_objects_rails/graph/badge.svg)](https://codecov.io/gh/mattwd7/service_objects_rails)
+
 A lightweight, high-speed service layer for Rails applications.
 
 ## Motivation
