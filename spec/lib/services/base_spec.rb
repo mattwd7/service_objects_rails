@@ -3,7 +3,7 @@ require "services/base"
 
 RSpec.describe Services::Base do
   subject(:service) do
-    class MultiplierService
+    Class.new do
       include Services::Base
 
       def initialize(value_1:, value_2:)
@@ -28,8 +28,6 @@ RSpec.describe Services::Base do
         response.add_errors("Values must be numbers")
       end
     end
-
-    MultiplierService
   end
 
   it "cannot be publicly instantiated" do

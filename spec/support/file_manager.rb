@@ -2,7 +2,7 @@ module FileManager
   # TODO: move this constant somewhere more central to the gem
   RAILS_SERVICE_DIRECTORIES = [
     "app/namespaces/services",
-    "spec/namespaces/services",
+    "spec/namespaces/services"
   ]
 
   def remove_files_and_directories(*additional_files_and_directories)
