@@ -21,7 +21,7 @@ Gem::Specification.new do |gem|
     "README.md"
   ]
 
-  # gem.add_development_dependency "codecov"
+  gem.add_development_dependency "codecov"
   gem.add_development_dependency "dotenv"
   gem.add_development_dependency "factory_bot_rails"
   gem.add_development_dependency "pry"
