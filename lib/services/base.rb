@@ -12,8 +12,13 @@ module Services::Base
     def call(**args)
       service = new(**args)
       service.instance_variable_set(:@response, Services::Response.new)
-      service.response.body = service.call
-      service.response
+
+      if ServiceObjectsRails.return_service_response_object
+        service.response.body = service.call
+        service.response
+      else
+        service.call
+      end
     end
   end
 end

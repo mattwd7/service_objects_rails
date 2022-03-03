@@ -67,4 +67,14 @@ RSpec.describe Services::Base do
       expect(service_response.errors).to eq(["Values must be numbers"])
     end
   end
+
+  context "with gem config return_service_response_object=false" do
+    before do
+      allow(ServiceObjectsRails).to receive(:return_service_response_object).and_return(false)
+    end
+
+    it "returns the return value from #call instead of a Service::Response" do
+      expect(service.call(value_1: 4, value_2: 3)).to eq(12)
+    end
+  end
 end
