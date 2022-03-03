@@ -231,22 +231,22 @@ PLATFORMS
   x86_64-linux
 
 DEPENDENCIES
-  codecov
-  dotenv
-  factory_bot_rails
-  pry
-  rails
-  rake
-  rspec
-  rspec-rails
+  codecov (~> 0.6)
+  dotenv (~> 2.7)
+  factory_bot_rails (~> 6.2)
+  pry (~> 0.14)
+  rails (~> 7.0)
+  rake (~> 13.0)
+  rspec (~> 3.11)
+  rspec-rails (~> 5.1)
   rspec_junit_formatter
-  rubocop
-  rubocop-performance
-  rubocop-rails
-  rubocop-rspec
+  rubocop (~> 1.25)
+  rubocop-performance (~> 1.13)
+  rubocop-rails (~> 2.13)
+  rubocop-rspec (~> 2.8)
   service_objects_rails!
-  simplecov
-  standard
+  simplecov (~> 0.21)
+  standard (~> 1.7)
   tzinfo-data
 
 BUNDLED WITH
